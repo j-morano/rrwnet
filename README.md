@@ -78,3 +78,14 @@ If the images were not previously preprocessed, you can use the `--preprocess` f
 ```bash
 python3 get_predictions.py --weights rrwnet_RITE_1.pth --images-path data/images/ --masks-path data/masks/ --save-path predictions/ --preprocess
 ```
+
+
+## Refine existing predictions
+
+You can refine existing predictions (e.g., from a different model) using the same `get_predictions.py` script. The script will save the refined predictions in the specified directory.
+Just make sure to provide the path to the predictions and the weights to be used for the refinement.
+Also, do not forget to use the `--refine` flag and do not use the `--preprocess` flag.
+
+```bash
+python3 get_predictions.py --weights rrwnet_RITE_refinement.pth --images-path data/U-Net_predictions/ --masks-path data/masks/ --save-path refined_predictions/ --refine
+```
