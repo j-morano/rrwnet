@@ -10,7 +10,7 @@ This is the official repository of the paper ["RRWNet: Recursive Refinement Netw
 
 
 
-## Predictions and Weights
+## Predictions and weights
 
 The predictions for the different datasets as well as the weights for the proposed RRWNet model can be found at the following link:
 
@@ -70,7 +70,7 @@ python3 preprocessing.py --images-path data/images/ --masks-path data/masks/ --s
 ```
 
 
-## Get Predictions
+## Get predictions
 
 To get predictions using the provided weights, run the `get_predictions.py` script. The script will save the predictions in the specified directory.
 If the images were not previously preprocessed, you can use the `--preprocess` flag to preprocess the images on the fly.
