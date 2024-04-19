@@ -89,3 +89,18 @@ Also, do not forget to use the `--refine` flag and do not use the `--preprocess`
 ```bash
 python3 get_predictions.py --weights rrwnet_RITE_refinement.pth --images-path data/U-Net_predictions/ --masks-path data/masks/ --save-path refined_predictions/ --refine
 ```
+
+
+## Citation
+Please cite our paper if you use our code or reference our work:
+
+```bib
+@misc{morano2024rrwnet,
+      title={RRWNet: Recursive Refinement Network for Effective Retinal Artery/Vein Segmentation and Classification}, 
+      author={José Morano and Guilherme Aresta and Hrvoje Bogunović},
+      year={2024},
+      eprint={2402.03166},
+      archivePrefix={arXiv},
+      primaryClass={eess.IV}
+}
+```
