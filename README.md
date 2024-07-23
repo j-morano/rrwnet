@@ -3,11 +3,16 @@
 This is the official repository of the paper ["RRWNet: Recursive Refinement Network for Effective Retinal Artery/Vein Segmentation and Classification"](https://doi.org/10.48550/arXiv.2402.03166) (preprint), by José Morano, Guilherme Aresta, and Hrvoje Bogunović.
 
 
-⚠️ **IMPORTANT: Training code to be uploaded upon publication.**
-
-
 ![Graphical_abstract](https://github.com/j-morano/rrwnet/assets/48717183/a573ce81-1b15-4dad-8cd7-c55bb1a049ef)
 
+
+## TODO
+
+- [x] Basic inference code.
+- [x] Training code.
+- [x] Preprocessed training and testing data.
+- [ ] Data preprocessing code.
+- [ ] Evaluation code.
 
 
 ## Predictions and weights
@@ -89,3 +94,37 @@ Also, do not forget to use the `--refine` flag and do not use the `--preprocess`
 ```bash
 python3 get_predictions.py --weights rrwnet_RITE_refinement.pth --images-path data/U-Net_predictions/ --masks-path data/masks/ --save-path refined_predictions/ --refine
 ```
+
+
+## Training
+
+All training code can be found in the `train/` directory. The training script is `train.py`, and the configuration file, with all the hyperparameters and command line arguments, is `config.py`.
+Please follow the instructions in `train/README.md` to train the model.
+
+
+
+## Citation
+
+If you use this code, the weights, the preprocessed data, or the predictions in your research, we would greatly appreciate it if you cite our work:
+```
+@misc{morano2024rrwnet,
+      title={RRWNet: Recursive Refinement Network for Effective Retinal Artery/Vein Segmentation and Classification},
+      author={José Morano and Guilherme Aresta and Hrvoje Bogunović},
+      year={2024},
+      eprint={2402.03166},
+      archivePrefix={arXiv},
+      primaryClass={eess.IV},
+      url={https://arxiv.org/abs/2402.03166},
+}
+```
+
+Also, if you use any of the public datasets used in this work, please cite the corresponding papers:
+
+- **RITE**
+    + Images: Staal, Joes, et al. "Ridge-based vessel segmentation in color images of the retina." IEEE transactions on medical imaging 23.4 (2004): 501-509.
+    + Annotations: Hu, Qiao, Michael D. Abràmoff, and Mona K. Garvin. "Automated separation of binary overlapping trees in low-contrast color retinal images." Medical Image Computing and Computer-Assisted Intervention–MICCAI 2013: 16th International Conference, Nagoya, Japan, September 22-26, 2013, Proceedings, Part II 16. Springer Berlin Heidelberg, 2013.
+- **LES-AV**
+    + Images and annotations: Orlando, José Ignacio, et al. "Towards a glaucoma risk index based on simulated hemodynamics from fundus images." Medical Image Computing and Computer Assisted Intervention–MICCAI 2018: 21st International Conference, Granada, Spain, September 16-20, 2018, Proceedings, Part II 11. Springer International Publishing, 2018.
+- **HRF**
+    + Images: Budai, Attila, et al. "Robust vessel segmentation in fundus images." International journal of biomedical imaging 2013.1 (2013): 154860.
+    + Annotations: Chen, Wenting, et al. "TW-GAN: Topology and width aware GAN for retinal artery/vein classification." Medical Image Analysis 77 (2022): 102340.
