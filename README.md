@@ -99,22 +99,21 @@ python3 get_predictions.py --weights rrwnet_RITE_refinement.pth --images-path da
 ## Training
 
 All training code can be found in the `train/` directory. The training script is `train.py`, and the configuration file, with all the hyperparameters and command line arguments, is `config.py`.
-Please follow the instructions in `train/README.md` to train the model.
+Please follow the instructions in [train/README.md](train/README.md) to train the model.
 
 
 
 ## Citation
 
 If you use this code, the weights, the preprocessed data, or the predictions in your research, we would greatly appreciate it if you cite our work:
+
 ```
-@misc{morano2024rrwnet,
-      title={RRWNet: Recursive Refinement Network for Effective Retinal Artery/Vein Segmentation and Classification},
-      author={José Morano and Guilherme Aresta and Hrvoje Bogunović},
-      year={2024},
-      eprint={2402.03166},
-      archivePrefix={arXiv},
-      primaryClass={eess.IV},
-      url={https://arxiv.org/abs/2402.03166},
+@article{morano2024rrwnet,
+    title={RRWNet: Recursive Refinement Network for Effective Retinal Artery/Vein Segmentation and Classification},
+    author={Morano, Jos{\'e} and Aresta, Guilherme and Bogunovi{\'c}, Hrvoje},
+    journal={arXiv preprint arXiv:2402.03166},
+    year={2024},
+    doi={10.48550/arXiv.2402.03166}
 }
 ```
 
