@@ -120,10 +120,10 @@ If you use this code, the weights, the preprocessed data, or the predictions in 
 Also, if you use any of the public datasets used in this work, please cite the corresponding papers:
 
 - **RITE**
-    + _Images_: Staal, Joes, et al. "Ridge-based vessel segmentation in color images of the retina." _IEEE transactions on medical imaging_ 23.4 (2004): 501-509.
-    + _Annotations_: Hu, Qiao, Michael D. Abràmoff, and Mona K. Garvin. "Automated separation of binary overlapping trees in low-contrast color retinal images." _Medical Image Computing and Computer-Assisted Intervention–MICCAI 2013: 16th International Conference, Nagoya, Japan, September 22-26, 2013, Proceedings, Part II 16_. Springer Berlin Heidelberg, 2013.
+    + **Images**: Staal, Joes, et al. "Ridge-based vessel segmentation in color images of the retina." _IEEE transactions on medical imaging_ 23.4 (2004): 501-509.
+    + **Annotations**: Hu, Qiao, Michael D. Abràmoff, and Mona K. Garvin. "Automated separation of binary overlapping trees in low-contrast color retinal images." _Medical Image Computing and Computer-Assisted Intervention–MICCAI 2013: 16th International Conference, Nagoya, Japan, September 22-26, 2013, Proceedings, Part II 16_. Springer Berlin Heidelberg, 2013.
 - **LES-AV**
-    + _Images and annotations_: Orlando, José Ignacio, et al. "Towards a glaucoma risk index based on simulated hemodynamics from fundus images." _Medical Image Computing and Computer Assisted Intervention–MICCAI 2018: 21st International Conference, Granada, Spain, September 16-20, 2018, Proceedings, Part II 11_. Springer International Publishing, 2018.
+    + **Images and annotations**: Orlando, José Ignacio, et al. "Towards a glaucoma risk index based on simulated hemodynamics from fundus images." _Medical Image Computing and Computer Assisted Intervention–MICCAI 2018: 21st International Conference, Granada, Spain, September 16-20, 2018, Proceedings, Part II 11_. Springer International Publishing, 2018.
 - **HRF**
-    + _Images_: Budai, Attila, et al. "Robust vessel segmentation in fundus images." _International journal of biomedical imaging 2013.1_ (2013): 154860.
-    + Annotations: Chen, Wenting, et al. "TW-GAN: Topology and width aware GAN for retinal artery/vein classification." _Medical Image Analysis_ 77 (2022): 102340.
+    + **Images**: Budai, Attila, et al. "Robust vessel segmentation in fundus images." _International journal of biomedical imaging 2013.1_ (2013): 154860.
+    + **Annotations**: Chen, Wenting, et al. "TW-GAN: Topology and width aware GAN for retinal artery/vein classification." _Medical Image Analysis_ 77 (2022): 102340.
