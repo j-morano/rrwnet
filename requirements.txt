@@ -33,12 +33,15 @@ pyparsing==3.1.2
 python-dateutil==2.9.0.post0
 requests==2.31.0
 scikit-image==0.22.0
+scikit-learn==1.5.1
 scipy==1.12.0
 six==1.16.0
 sympy==1.12
+thop==0.1.1.post2209072238
 tifffile==2024.1.30
 torch==2.2.0
 torchvision==0.17.0
 triton==2.2.0
 typing_extensions==4.9.0
 urllib3==2.2.0
+
