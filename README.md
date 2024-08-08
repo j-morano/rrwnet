@@ -119,9 +119,9 @@ If you use this code, the weights, the preprocessed data, or the predictions in 
 @article{morano2024rrwnet,
     title={RRWNet: Recursive Refinement Network for Effective Retinal Artery/Vein Segmentation and Classification},
     author={Morano, Jos{\'e} and Aresta, Guilherme and Bogunovi{\'c}, Hrvoje},
-    journal={arXiv preprint arXiv:2402.03166},
+    journal={Expert Systems with Applications},
     year={2024},
-    doi={10.48550/arXiv.2402.03166}
+    doi={10.1016/j.eswa.2024.124970}
 }
 ```
 
