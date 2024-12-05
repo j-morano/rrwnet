@@ -7,7 +7,7 @@ Configuration options and hyperparameters can be found in `config.py`.
 The data can be downloaded from the following link:
 - <https://drive.google.com/drive/folders/1LHOrkaHZh0O3kOIXRVD23904ZtvVzCnV?usp=sharing>
 
-Place the data in the `_Data/` directory under the `train/` directory.
+Place the data in the `_Data/` directory under `train/`.
 
 
 To train the model, run the following commands:
