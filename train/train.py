@@ -2,9 +2,9 @@
 
 import os
 import multiprocessing
-import shutil
 import sys
 import json
+import random
 
 import torch
 from torch.utils.data import DataLoader
@@ -220,6 +220,13 @@ def multi_train():
         p.join()
 
 
+def fix_seeds():
+    random.seed(config.seed)
+    torch.manual_seed(config.seed)
+    torch.cuda.manual_seed(config.seed)
+    torch.cuda.manual_seed_all(config.seed)
+
 
 if __name__ == "__main__":
+    fix_seeds()
     multi_train()

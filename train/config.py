@@ -18,6 +18,7 @@ parser.add_argument('--gpu_id', type=int, default=0)
 parser.add_argument('--n_proc', type=int, default=1)
 parser.add_argument('--data_folder', type=str, default='./_Data/')
 parser.add_argument('--version', type=str, default='Journal_paper')
+parser.add_argument('--seed', type=int, default=77)
 args = parser.parse_args()
 
 
@@ -49,6 +50,7 @@ gpu_id = args.gpu_id
 
 training_folder = f'__training/{args.version}/{dataset}'
 
+seed = args.seed
 
 if dataset == 'RITE-train':
     images = [
