@@ -15,6 +15,7 @@ This is the official repository of the paper ["RRWNet: Recursive Refinement Netw
 - [x] Data preprocessing code.
 - [x] Evaluation code.
 - [x] Better documentation.
+- [x] Single model evaluation.
 - [ ] Easier execution of the evaluation.
 
 
