@@ -14,7 +14,7 @@ This is the official repository of the paper ["RRWNet: Recursive Refinement Netw
 - [x] Preprocessed training and testing data.
 - [x] Data preprocessing code.
 - [x] Evaluation code.
-- [ ] Better documentation.
+- [x] Better documentation.
 - [ ] Easier execution of the evaluation.
 
 
@@ -103,11 +103,19 @@ python3 get_predictions.py --weights rrwnet_RITE_refinement.pth --images-path da
 
 All training code can be found in the `train/` directory. The training script is `train.py`, and the configuration file, with all the hyperparameters and command line arguments, is `config.py`.
 Please follow the instructions in [train/README.md](train/README.md) to train the model.
+The `train/` directory also contains the code to get the predictions of the model on the test set, which are then used for the evaluation.
+
+
+## Evaluation
+
+All evaluation code can be found in the `eval/` directory.
+Please follow the instructions in [eval/README.md](eval/README.md).
+
 
 
 ## Contact
 
-If you have any questions or problems with the code or the paper, please do not hesitate to open an issue in this repository or contact me at `jose.moranosanchez@meduniwien.ac.at`.
+If you have any questions or problems with the code or the paper, please do not hesitate to open an issue in this repository (preferred) or contact me at `jose.moranosanchez@meduniwien.ac.at`.
 
 
 

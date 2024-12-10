@@ -109,36 +109,6 @@ class WNet(nn.Module):
         second_x = self.second_u(first_x_sig)
         return [first_x, second_x]
 
-    # def get_loss(self, input_, gt, mask):
-    #     pred_1, pred_2 = self(input_)
-    #     loss = self.loss(pred_1, gt, mask)
-    #     loss += self.loss(pred_2, gt, mask)
-    #     return loss, pred_2
-
-
-class AbstractRRNet(nn.Module):
-    def __init__(self, input_ch, output_ch, base_ch):
-        super().__init__()
-
-    # def get_loss(self, input_, gt, mask):
-    #     predictions = self(input_)
-
-    #     loss_1 = self.loss(predictions[0], gt, mask)
-
-    #     # Second loss (refinement) inspired by Mosinska:CVPR:2018.
-    #     loss_2 = 1 * self.loss(predictions[1], gt, mask)
-    #     for i, prediction in enumerate(predictions[2:], 2):
-    #         loss_2 += i * self.loss(prediction, gt, mask)
-
-    #     K = len(predictions[1:])
-    #     Z = (1/2) * K * (K + 1)
-
-    #     loss_2 *= 1/Z
-
-    #     loss = loss_1 + loss_2
-
-    #     return loss, predictions[-1]
-
 
 class RRUNet(nn.Module):
     """Mosinska et al. approach (without topology loss)"""

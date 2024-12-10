@@ -23,3 +23,16 @@ The available datasets for training are `RITE-train` and `HRF-Karlsson-w1024`, w
 
 
 Training logs and weights will be saved under the `__training/` directory.
+
+
+Once the model is trained, the predictions can be generated using the following command.
+<!-- The `-p` flag should point to the directory containing the trained model weights, while the `-i` flag should point to the directory containing the images to be predicted. -->
+
+```bash
+python3 get_predictions.py -p <path_to_the_trained_model> -i <path_to_the_images>
+```
+
+The predictions will be saved under the `tests_predictions/` directory in the path specified by the `-p` flag.
+
+
+To evaluate the predictions, see [eval/README.md](eval/README.md).
