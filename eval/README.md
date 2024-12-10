@@ -15,7 +15,7 @@ There are two types of evaluations that can be done:
 
 ## Single model evaluation
 
-Once the predictions are generated (see [train/README.md](train/README.md)), they can be evaluated using the following commands.
+Once the predictions are generated (see [train/README.md](../train/README.md)), they can be evaluated using the following commands.
 
 ```bash
 # Activate the virtual environment
@@ -62,4 +62,4 @@ python3 compare_results.py -d RITE-test
 As before, the results will be saved in the `__results/` directory in a JSON file with the name of the dataset.
 
 
-Please check the [README.md](README.md) file in the root directory for the citation information of the different models.
+Please check the [README.md](../README.md) file in the root directory for the citation information of the different models.

@@ -35,4 +35,4 @@ python3 get_predictions.py -p <path_to_the_trained_model> -i <path_to_the_images
 The predictions will be saved under the `tests_predictions/` directory in the path specified by the `-p` flag.
 
 
-To evaluate the predictions, see [eval/README.md](eval/README.md).
+To evaluate the predictions, see [eval/README.md](../eval/README.md).
