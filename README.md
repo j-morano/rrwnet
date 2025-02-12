@@ -36,9 +36,18 @@ Please note that the size of the images used for training is important when usin
 
 ## Setting up the environment
 
-The code was tested using Python 3.10.10. The following instructions are for setting up the environment using `pyenv` and `pip`.
-However, the code should work with other Python versions and package managers.
+
+The code was tested using Python 3.10.10.
+However, it should work with other Python versions and package managers.
 Just make sure to install the required packages listed in `requirements.txt`.
+If you want to use this exact Python version, it can be easily installed using `pyenv` as shown in the next section.
+Otherwise, you can skip to the [Requirements](#requirements) section.
+
+
+### Python 3.10.10 (`pyenv`)
+
+> [!IMPORTANT]
+> The following steps are only necessary if you want to install Python 3.10.10 using `pyenv`.
 
 Install `pyenv`.
 ```sh
@@ -68,11 +77,22 @@ Update `pip`.
 pip install --upgrade pip
 ```
 
+
+### Requirements
+
+Create and activate Python environment.
+```sh
+python -m venv venv/
+source venv/bin/activate  # bash
+. venv/bin/activate.fish  # fish
+```
+
 Install requirements using `requirements.txt`.
 
 ```sh
 pip3 install -r requirements.txt
 ```
+
 
 ## Preprocessing (optional)
 
