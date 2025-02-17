@@ -20,7 +20,7 @@ This approach builds on our previous work presented in the paper ["Simultaneous 
 - [x] Evaluation code.
 - [x] Better documentation.
 - [x] Single model evaluation.
-- [ ] Easier execution of the evaluation.
+- [x] Easier execution of the evaluation.
 
 
 ## Predictions and weights
