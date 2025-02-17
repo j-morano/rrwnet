@@ -43,7 +43,7 @@ Once the predictions are generated (see [train/README.md](../train/README.md)), 
 # Activate the virtual environment
 source ../venv/bin/activate
 # Evaluate the model
-compare_results.py -p <path_to_the_predictions> -d <dataset_name>
+python compare_results.py -p <path_to_the_predictions> -d <dataset_name>
 ```
 
 This command will evaluate the predictions of the model on the specified dataset. The results will be saved in the `__results/` directory in a JSON file with the name of the dataset.

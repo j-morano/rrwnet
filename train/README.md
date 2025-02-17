@@ -19,7 +19,7 @@ source ../venv/bin/activate
 python3 train.py --dataset RITE-train --model RRWNet
 ```
 
-The available datasets for training are `RITE-train` and `HRF-Karlsson-w1024`, while the available models are `RRWNet`, `RRWNetAll`, `RRUNet`, `WNet`, and `UNet`. See the paper for more details.
+The available datasets for training are `RITE-train` and `HRF-Karlsson-w1024`, while the available models are `RRWNet`, `RRWNetAll`, `RRUNet`, `WNet`, and `UNet`. See the [paper](https://arxiv.org/pdf/2402.03166) for more details.
 
 
 Training logs and weights will be saved under the `__training/` directory.

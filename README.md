@@ -146,7 +146,7 @@ If you have any questions or problems with the code or the paper, please do not 
 
 ## Citation
 
-If you use this code, the weights, the preprocessed data, or the predictions in your research, we would greatly appreciate it if you cite our work:
+If you use this code, the weights, the preprocessed data, or the predictions in your research, we would greatly appreciate it if you give a star to the repo and cite our work:
 
 ```
 @article{morano2024rrwnet,
