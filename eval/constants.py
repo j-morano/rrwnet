@@ -2,7 +2,7 @@ import argparse
 
 
 class Dataset(argparse.Namespace):
-    def __init__(self, name, ids, pattern, shape, padding, padding_pos, gt):
+    def __init__(self, name, ids, pattern, shape, padding, padding_pos):
         self.name = name
         self.ids = ids
         self.pattern = pattern
@@ -11,7 +11,6 @@ class Dataset(argparse.Namespace):
         self.padding_pos = padding_pos
         self.samples = dict()
         self.paths = set()
-        self.gt = gt
 
 
 lesav_ids = [
@@ -26,7 +25,6 @@ lesav_dataset = Dataset(
     shape=(1444, 1620),
     padding=((6, 7), (0, 0), (0, 0)),
     padding_pos=1,
-    gt='gt_orlando'
 )
 
 rite_test_dataset = Dataset(
@@ -36,7 +34,6 @@ rite_test_dataset = Dataset(
     shape=(584, 565),
     padding=((4, 4), (5, 6), (0, 0)),
     padding_pos=2,
-    gt='gt_hu'
 )
 
 
@@ -51,6 +48,11 @@ hrf_dataset = Dataset(
     shape=(2336, 3504),
     padding=None,
     padding_pos=None,
-    gt='gt_chen'
 )
 
+
+dataset_factory = {
+    'RITE-test': rite_test_dataset,
+    'LESAV': lesav_dataset,
+    'HRF-test': hrf_dataset,
+}

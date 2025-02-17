@@ -10,8 +10,7 @@ import socket
 
 from scipy.stats import wilcoxon
 import numpy as np
-from sklearn.metrics import auc as compute_auc
-from sklearn.metrics import roc_curve, precision_recall_curve, confusion_matrix
+from test_utils import compute_classification_metrics, get_aucs
 
 
 
@@ -30,50 +29,6 @@ args = parser.parse_args()
 if socket.gethostname() == 'hemingway':
     print('-> Running on hemingway, overwriting some arguments')
     args.nproc = 5
-
-
-def compute_classification_metrics(
-    ground_truth,
-    prediction,
-    mask=None,
-    threshold=0.5,
-):
-    # 2-class confusion matrix values
-    if mask is not None:
-        ground_truth = ground_truth[mask]
-        prediction = prediction[mask]
-    # Ensure that the values are 0 or 1
-    ground_truth = np.where(ground_truth > 0.5, 1, 0)
-    prediction = np.where(prediction > threshold, 1, 0)
-    try:
-        tn, fp, fn, tp = confusion_matrix(ground_truth, prediction).ravel()
-    except ValueError:
-        print('Value error excepted')
-        tn, fp, fn, tp = 1, 0, 0, 1
-
-    # Metrics
-    sensitivity = tp / (tp + fn)
-    specificity = tn / (tn + fp)
-    accuracy = (tp + tn) / (tp + tn + fp + fn)
-    f1 = 2 * tp / (2 * tp + fp + fn)
-
-    return sensitivity, specificity, accuracy, f1
-
-
-def get_aucs(gts, preds, masks=None):
-    # print(gts.shape, preds.shape)
-    # print(np.unique(gts), np.unique(preds))
-    if masks is None:
-        fpr, tpr, _ = roc_curve(gts.flatten(), preds.flatten())
-    else:
-        fpr, tpr, _ = roc_curve(gts[masks], preds[masks])
-    auc_roc = compute_auc(fpr, tpr)
-    if masks is None:
-        precision, recall, _ = precision_recall_curve(gts.flatten(), preds.flatten())
-    else:
-        precision, recall, _ = precision_recall_curve(gts[masks], preds[masks])
-    auc_pr = compute_auc(recall, precision)
-    return auc_roc, auc_pr
 
 
 def append_or_create(dic, key, value):

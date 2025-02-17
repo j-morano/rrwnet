@@ -118,3 +118,5 @@ for image_fn in sorted(images_path.iterdir()):
             pred = pred[:, :, padding[0][0]:-padding[0][1], padding[1][0]:-padding[1][1]]
             target_fn = save_path / Path(image_fn).name
             vutils.save_image(pred, target_fn)
+
+print('Images saved in', save_path)

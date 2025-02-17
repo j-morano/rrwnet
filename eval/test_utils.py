@@ -10,6 +10,7 @@ import numpy as np
 from sklearn.metrics import confusion_matrix
 from skimage import io
 from skimage.morphology import binary_erosion, disk
+from skimage.transform import resize
 from sklearn.metrics import auc as compute_auc
 from sklearn.metrics import roc_curve, precision_recall_curve
 
@@ -254,7 +255,7 @@ def mav(
 ) -> dict:
     h, w = dataset.shape
     samples = dataset.samples
-    shape = (len(dataset.ids), h,w)
+    shape = (len(dataset.samples), h,w)
     all_preds_a = np.zeros(shape, np.float32)
     all_preds_v = np.zeros(shape, np.float32)
     all_gts_v = np.zeros(shape, np.float32)
@@ -274,36 +275,50 @@ def mav(
     for sample in samples.values():
         print('.', end='', flush=True)
         img = io.imread(sample[model]) / 255.0
-        ground = np.round(io.imread(sample[gt_key]) / 255.0)
+        if img.shape[0] != h or img.shape[1] != w:
+            img = resize(img, (h, w), order=2, anti_aliasing=True, preserve_range=True)
+        ground = io.imread(sample[gt_key]) / 255.0
+        if ground.shape[0] != h or ground.shape[1] != w:
+            ground = resize(ground, (h, w), order=0, anti_aliasing=True, preserve_range=True)
+        ground = np.round(ground)
         fov_mask = io.imread(sample[masks_key])
+        if fov_mask.shape[0] != h or fov_mask.shape[1] != w:
+            fov_mask = resize(fov_mask, (h, w), order=0, anti_aliasing=True, preserve_range=True)
         if len(fov_mask.shape) == 3:
             fov_mask = np.mean(fov_mask, axis=2)
         fov_mask = fov_mask > 0.5
         mask, _, _ = get_vessel_tree_mask(ground)
         mask = mask > 0.5
 
-        inf_a, _, corr_a = topo_metric(ground[:, :, 0], img[:, :, 0], 0.5, n_paths)
-        infs_a.append(inf_a/n_paths)
-        corrs_a.append(corr_a/n_paths)
+        if n_paths > 0:
+            inf_a, _, corr_a = topo_metric(ground[:, :, 0], img[:, :, 0], 0.5, n_paths)
+            infs_a.append(inf_a/n_paths)
+            corrs_a.append(corr_a/n_paths)
 
-        inf_v, _, corr_v = topo_metric(ground[:, :, 1], img[:, :, 1], 0.5, n_paths)
-        infs_v.append(inf_v/n_paths)
-        corrs_v.append(corr_v/n_paths)
+            inf_v, _, corr_v = topo_metric(ground[:, :, 1], img[:, :, 1], 0.5, n_paths)
+            infs_v.append(inf_v/n_paths)
+            corrs_v.append(corr_v/n_paths)
 
-        inf_bv, _, corr_bv = topo_metric(ground[:, :, 2], img[:, :, 2], 0.5, n_paths)
-        infs_bv.append(inf_bv/n_paths)
-        corrs_bv.append(corr_bv/n_paths)
+            inf_bv, _, corr_bv = topo_metric(ground[:, :, 2], img[:, :, 2], 0.5, n_paths)
+            infs_bv.append(inf_bv/n_paths)
+            corrs_bv.append(corr_bv/n_paths)
+        else:
+            infs_a.append(.5)
+            corrs_a.append(.5)
+            infs_v.append(.5)
+            corrs_v.append(.5)
+            infs_bv.append(.5)
+            corrs_bv.append(.5)
 
         arteries = ground[:, :, 0]
         # Give random values between 0 and 1 to the pixels where
         #   channels 0 and 1 are 0.
-        for x in range(img.shape[0]):
-            for y in range(img.shape[1]):
-                if img[x, y, 0] == 0 and img[x, y, 1] == 0 and mask[x, y]:
-                    rand = random.random()
-                    img[x, y, 0] = rand
-                    img[x, y, 1] = 1 - rand
+        rand = np.random.random(img.shape[:2])
+        condition = (img[:, :, 0] == 0) & (img[:, :, 1] == 0) & mask
+        img[condition, 0] = rand[condition]
+        img[condition, 1] = 1 - rand[condition]
         pred_indices = 1 - np.argmax(img[:, :, :2], axis=2)
+
         # Only for predicted vessels
         if predicted_only:
             mask = mask * img[:, :, 2] > 0.5
@@ -398,3 +413,11 @@ def mav(
         'corr_bv': corr_bv,
     }
     return partial_results
+
+
+
+test_factory = {
+    'mav': mav,
+    'topo_mp': topo_mp,
+    'save_all': save_all,
+}

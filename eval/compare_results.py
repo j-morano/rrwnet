@@ -32,6 +32,7 @@ if args.dataset == "RITE-test":
         'gt_hu',
         'masks',
     }
+    dataset.gt = 'gt_hu'
     if args.predictions_path is None:
         dataset.paths = dataset.paths.union({
             'gt2_qureshi',
@@ -51,6 +52,7 @@ elif args.dataset == "LES-AV":
         'gt_orlando',
         'masks',
     }
+    dataset.gt = 'gt_orlando'
     if args.predictions_path is None:
         dataset.paths = dataset.paths.union({
             'rrwnet',
@@ -59,12 +61,13 @@ elif args.dataset == "LES-AV":
             'galdran',
             'galdran/refined_AV',
         })
-elif args.dataset == "HRF":
+elif args.dataset == "HRF-test":
     dataset = constants.hrf_dataset
     dataset.paths = {
         'gt_chen',
         'masks',
     }
+    dataset.gt = 'gt_chen'
     if args.predictions_path is None:
         dataset.paths = dataset.paths.union({
             'gt2_hemelings',
@@ -91,7 +94,6 @@ assert Path(save_fn).parent.exists(), Path(save_fn).parent
 # add samples to dataset Namespace
 dataset.samples = {}
 
-print("Generating samples file")
 for path in dataset.paths:
     full_path = data_path / dataset.name / path
     assert full_path.exists(), full_path
