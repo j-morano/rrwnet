@@ -2,8 +2,9 @@
 
 In this directory, there are multiple files that are used to evaluate the performance of the models from the predictions.
 
-The ground truths for the evaluations, the predictions of our model as well as the other SOTA models in the original dataset resolution can be found in the following link:
-- <https://drive.google.com/drive/folders/1E2TIjwqMb-YM2IuTSPE5L4NeZ-Q04ktU?usp=sharing>
+The ground truths for the evaluations, the predictions of our model as well as the other SOTA models in the original dataset resolution can be found in the following links:
+- Google Drive: <https://drive.google.com/drive/folders/1E2TIjwqMb-YM2IuTSPE5L4NeZ-Q04ktU?usp=sharing>
+- GitHub (release assets): <https://github.com/j-morano/rrwnet/releases/tag/preds-n-data>
 
 The data should be placed in the `_Evaluation_Data/` directory under `eval/`.
 

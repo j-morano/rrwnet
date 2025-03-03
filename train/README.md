@@ -5,7 +5,8 @@ This directory contains the code to train the RRWNet model.
 Configuration options and hyperparameters can be found in `config.py`.
 
 The data can be downloaded from the following link:
-- <https://drive.google.com/drive/folders/1LHOrkaHZh0O3kOIXRVD23904ZtvVzCnV?usp=sharing>
+- Google Drive: <https://drive.google.com/drive/folders/1LHOrkaHZh0O3kOIXRVD23904ZtvVzCnV?usp=sharing>
+- GitHub: <https://github.com/j-morano/rrwnet/releases/download/preds-n-data/_Data.zip>
 
 Place the data in the `_Data/` directory under `train/`.
 

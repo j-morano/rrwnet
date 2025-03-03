@@ -25,9 +25,12 @@ This approach builds on our previous work presented in the paper ["Simultaneous 
 
 ## Predictions and weights
 
-The predictions for the different datasets as well as the weights for the proposed RRWNet model can be found at the following link:
+The predictions for the different datasets as well as the weights for the proposed RRWNet model can be found at the following links:
 
-- <https://drive.google.com/drive/folders/1Pz0z-OxzEft5EWGbZ3MeeqQNWqvv2ese?usp=sharing>
+- Google Drive: <https://drive.google.com/drive/folders/1Pz0z-OxzEft5EWGbZ3MeeqQNWqvv2ese?usp=sharing>
+- GitHub (release assets):
+  + Weights: <https://github.com/j-morano/rrwnet/releases/tag/weights>
+  + Predictions: <https://github.com/j-morano/rrwnet/releases/download/preds-n-data/Predictions.zip>
 
 
 The model trained on the RITE dataset was trained using the original image resolution, while the model trained on HRF was trained using images resized to a width of 1024 pixels. The weights for the RITE dataset are named `rrwnet_RITE_1.pth`, while the weights for the HRF dataset are named `rrwnet_HRF_0.pth`.
