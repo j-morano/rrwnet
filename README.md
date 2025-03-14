@@ -13,7 +13,7 @@ This approach builds on our previous work presented in the paper ["Simultaneous 
 
 ## Basic usage
 
-The models can be easily used with the `model.py` code and loading the weights with Hugging Face 🤗. The only requirement is to have the `torch` and `huggingface_hub` packages installed.
+The models can be easily used with the `model.py` code and loading the weights with Hugging Face 🤗. The only requirement is to have the `torch`, `huggingface_hub`, and `safetensors` packages installed.
 
 ```python
 from huggingface_hub import PyTorchModelHubMixin
