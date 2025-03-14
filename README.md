@@ -25,7 +25,8 @@ class RRWNet(RRWNetModel, PyTorchModelHubMixin):
         super().__init__(input_ch, output_ch, base_ch, iterations)
 
 
-model = RRWNet.from_pretrained("j-morano/rrwnet-rite") # rrwnet-hrf for the HRF dataset
+model = RRWNet.from_pretrained("j-morano/rrwnet-rite")
+# or rrwnet-hrf for the HRF dataset
 ```
 
 
