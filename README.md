@@ -11,23 +11,28 @@ This is the official repository of the paper ["RRWNet: Recursive Refinement Netw
 This approach builds on our previous work presented in the paper ["Simultaneous segmentation and classification of the retinal arteries and veins from color fundus images"](https://doi.org/10.1016/j.artmed.2021.102116).
 
 
-## TODO
+## Basic usage
 
-- [x] Basic inference code.
-- [x] Training code.
-- [x] Preprocessed training and testing data.
-- [x] Data preprocessing code.
-- [x] Evaluation code.
-- [x] Better documentation.
-- [x] Single model evaluation.
-- [x] Easier execution of the evaluation.
+The models can be easily used by using the `model.py` code and loading the weights using Hugging Face 🤗. The only requirement is to have the `torch` and `huggingface_hub` packages installed.
+
+```python
+from huggingface_hub import PyTorchModelHubMixin
+from model import RRWNet as RRWNetModel
+
+
+class RRWNet(RRWNetModel, PyTorchModelHubMixin):
+    def __init__(self, input_ch=3, output_ch=3, base_ch=64, iterations=5):
+        super().__init__(input_ch, output_ch, base_ch, iterations)
+
+
+model = RRWNet.from_pretrained("j-morano/rrwnet-rite") # rrwnet-hrf for the HRF dataset
+```
 
 
 ## Predictions and weights
 
 The predictions for the different datasets as well as the weights for the proposed RRWNet model can be found at the following links:
 
-- Google Drive: <https://drive.google.com/drive/folders/1Pz0z-OxzEft5EWGbZ3MeeqQNWqvv2ese?usp=sharing>
 - GitHub (release assets):
   + Weights: <https://github.com/j-morano/rrwnet/releases/tag/weights>
   + Predictions: <https://github.com/j-morano/rrwnet/releases/download/preds-n-data/Predictions.zip>
