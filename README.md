@@ -57,6 +57,18 @@ The model trained on the RITE dataset was trained using the original image resol
 Please note that the size of the images used for training is important when using the weights for predictions.
 
 
+## Data format
+
+Our code always expects the images to be RGB images with pixel values in the range [0, 255] and the masks to be RGB images with the following segmentation maps in each channel:
+
+* Red channel: Arteries
+* Green channel: Veins
+* Blue channel: Vessels (union of arteries and veins)
+
+The masks should be binary images with pixel values in the range [0, 255].
+The predictions will be saved in the same format as the masks.
+
+
 ## Setting up the environment
 
 
