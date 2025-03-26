@@ -2,13 +2,27 @@
 
 This is the official repository of the paper ["RRWNet: Recursive Refinement Network for Effective Retinal Artery/Vein Segmentation and Classification"](https://doi.org/10.1016/j.eswa.2024.124970), by José Morano, Guilherme Aresta, and Hrvoje Bogunović, published in _Expert Systems with Applications_ (2024).
 
-[[`arXiv`](https://doi.org/10.48550/arXiv.2402.03166)] [`ESWA`](https://doi.org/10.1016/j.eswa.2024.124970)] [[`BibTeX`](#citation)]
+<p align="center">[[`arXiv`](https://doi.org/10.48550/arXiv.2402.03166)] [`ESWA`](https://doi.org/10.1016/j.eswa.2024.124970)] [[`BibTeX`](#citation)]</p>
 
+
+## Highlights
+
+* Human-level, state-of-the-art performance on retinal artery/vein segmentation and classification.
+    + Evaluated on three public datasets: RITE, LES-AV, and HRF.
+* Novel recursive framework for solving manifest errors in semantic segmentation maps.
+    + First framework to combine module stacking and recursive refinement approaches.
+* Stand-alone recursive refinement module for post-processing artery/vein segmentation maps.
+
+
+
+## Overview
 
 ![Graphical_abstract](https://github.com/j-morano/rrwnet/assets/48717183/a573ce81-1b15-4dad-8cd7-c55bb1a049ef)
 
 
-This approach builds on our previous work presented in the paper ["Simultaneous segmentation and classification of the retinal arteries and veins from color fundus images"](https://doi.org/10.1016/j.artmed.2021.102116).
+## Previous work
+
+This approach builds on our previous work presented in the paper ["Simultaneous segmentation and classification of the retinal arteries and veins from color fundus images"](https://doi.org/10.1016/j.artmed.2021.102116), published in _Artificial Intelligence in Medicine_ (2021).
 
 
 ## Basic usage
