@@ -1,4 +1,4 @@
-# RRWNet
+![RRWNet](https://github.com/user-attachments/assets/2c9d1a46-ee37-4300-bea1-011da92a6ba9)
 
 This is the official repository of the paper ["RRWNet: Recursive Refinement Network for Effective Retinal Artery/Vein Segmentation and Classification"](https://doi.org/10.1016/j.eswa.2024.124970), by José Morano, Guilherme Aresta, and Hrvoje Bogunović, published in _Expert Systems with Applications_ (2024).
 
