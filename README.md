@@ -8,7 +8,7 @@
 
 <p align="center">
     <a href="#basic-usage">Usage</a> •
-    <a href="#predictions-and-weights">Weights</a> •
+    <a href="#weights-and-predictions">Weights</a> •
     <a href="#training-and-evaluation">Training and Evaluation</a> •
     <a href="https://arxiv.org/abs/2402.03166">arXiv</a> •
     <a href="https://doi.org/10.1016/j.eswa.2024.124970">ESwA</a> •
@@ -59,9 +59,9 @@ model = RRWNet.from_pretrained("j-morano/rrwnet-rite")
 ```
 
 
-## Predictions and weights
+## Weights and predictions
 
-The predictions for the different datasets as well as the weights for the proposed RRWNet model can be found at the following links:
+The weights of the proposed RRWNet model as well as the predictions for the different datasets can be found at the following links:
 
 - GitHub (release assets):
   + Weights: <https://github.com/j-morano/rrwnet/releases/tag/weights>
