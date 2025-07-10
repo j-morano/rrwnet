@@ -5,7 +5,7 @@ In this directory, there are multiple files that are used to evaluate the perfor
 The ground truths for the evaluations, the predictions of our model as well as the other SOTA models in the original dataset resolution can be found in the following links:
 - GitHub (release assets): <https://github.com/j-morano/rrwnet/releases/tag/preds-n-data>
 
-The data should be placed in the `_Evaluation_Data/` directory under `eval/`.
+The data (i.e., the contents of `_Evaluation_Data.zip`) should be placed in the `_Evaluation_Data/` directory under `eval/`.
 
 
 There are two types of evaluations that can be done:

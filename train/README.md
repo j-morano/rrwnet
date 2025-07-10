@@ -7,7 +7,7 @@ Configuration options and hyperparameters can be found in `config.py`.
 The data can be downloaded from the following link:
 - GitHub: <https://github.com/j-morano/rrwnet/releases/download/preds-n-data/_Data.zip>
 
-Place the data in the `_Data/` directory under `train/`.
+Place the contents of `_Data.zip` in the `_Data/` directory under `train/`.
 
 
 To train the model, run the following commands:

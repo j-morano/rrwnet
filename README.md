@@ -1,10 +1,23 @@
 [![arXiv](https://img.shields.io/badge/arXiv-2402.03166-red?logo=arXiv&logoColor=white)](https://arxiv.org/abs/2402.03166)
+[![DOI](https://img.shields.io/badge/DOI-10.1016/j.eswa.2024.124970-teal)](https://doi.org/10.1016/j.eswa.2024.124970)
+[![HF](https://img.shields.io/badge/🤗_Hugging_Face-RRWNet-blue)](https://huggingface.co/j-morano/models)
+[![License: MIT](https://img.shields.io/badge/License-MIT-darkgreen)](https://raw.githubusercontent.com/j-morano/rrwnet/refs/heads/main/LICENSE)
+
 
 ![RRWNet](https://github.com/user-attachments/assets/2c9d1a46-ee37-4300-bea1-011da92a6ba9)
 
+<p align="center">
+    <a href="#basic-usage">Usage</a> •
+    <a href="#predictions-and-weights">Weights</a> •
+    <a href="#training-and-evaluation">Training and Evaluation</a> •
+    <a href="https://arxiv.org/abs/2402.03166">arXiv</a> •
+    <a href="https://doi.org/10.1016/j.eswa.2024.124970">ESwA</a> •
+    <a href="#citation">Citation</a>
+</p>
+
 This is the official repository of the paper ["RRWNet: Recursive Refinement Network for Effective Retinal Artery/Vein Segmentation and Classification"](https://doi.org/10.1016/j.eswa.2024.124970), by José Morano, Guilherme Aresta, and Hrvoje Bogunović, published in _Expert Systems with Applications_ (2024).
 
-[[`arXiv`](https://doi.org/10.48550/arXiv.2402.03166)] [`ESWA`](https://doi.org/10.1016/j.eswa.2024.124970)] [[`BibTeX`](#citation)]
+<!-- [[`arXiv`](https://doi.org/10.48550/arXiv.2402.03166)] [`ESWA`](https://doi.org/10.1016/j.eswa.2024.124970)] [[`BibTeX`](#citation)] -->
 
 
 ## Highlights
@@ -63,9 +76,9 @@ Please note that the size of the images used for training is important when usin
 
 Our code always expects the images to be RGB images with pixel values in the range [0, 255] and the masks to be RGB images with the following segmentation maps in each channel:
 
-* Red channel: Arteries
-* Green channel: Veins
-* Blue channel: Vessels (union of arteries and veins)
+* 🔴 Red: Arteries
+* 🟢 Green: Veins
+* 🔵 Blue: Vessels (union of arteries and veins)
 
 The masks should be binary images with pixel values in the range [0, 255].
 The predictions will be saved in the same format as the masks.
@@ -73,18 +86,19 @@ The predictions will be saved in the same format as the masks.
 
 ## Setting up the environment
 
-
-The code was tested using Python 3.10.10.
-However, it should work with other Python versions and package managers.
+For the paper, the code was run using Python 3.10.10, and was also tested for Python 3.12.8 afterwards.
+In general, with the specified requirements, it is expected to work with any Python version <3.13.
 Just make sure to install the required packages listed in `requirements.txt`.
-If you want to use this exact Python version, it can be easily installed using `pyenv` as shown in the next section.
+If you want to use the exact Python version of the paper, it can be easily installed using `pyenv` as shown in the next collapsed section.
 Otherwise, you can skip to the [Requirements](#requirements) section.
 
 
+<details>
+<summary><b>Installing Python 3.10.10 using pyenv</b></summary>
+
 ### Python 3.10.10 (`pyenv`)
 
-> [!IMPORTANT]
-> The following steps are only necessary if you want to install Python 3.10.10 using `pyenv`.
+> **📌 IMPORTANT**: The following steps are only necessary if you want to install Python 3.10.10 using `pyenv`.
 
 Install `pyenv`.
 ```sh
@@ -108,11 +122,16 @@ source venv/bin/activate  # bash
 . venv/bin/activate.fish  # fish
 ```
 
-Update `pip`.
+Update `pip` if necessary.
 
 ```sh
 pip install --upgrade pip
 ```
+
+> **💡 TIP**: For installing Python 3.12.8, just replace `3.10.10` with `3.12.8` in the commands above.
+
+</details>
+
 
 
 ### Requirements
@@ -131,9 +150,11 @@ pip3 install -r requirements.txt
 ```
 
 
-## Preprocessing (optional)
+## Preprocessing
 
 You can preprocess the images offline using the `preprocessing.py` script. The script will enhance the images and masks and save them in the specified directory.
+This preprocessing step is necessary to use our trained models or to reproduce the results of the paper.
+However, it is still possible to train the models without preprocessing the images or using your offline preprocessing method.
 
 ```bash
 python3 preprocessing.py --images-path data/images/ --masks-path data/masks/ --save-path data/enhanced
@@ -161,14 +182,11 @@ python3 get_predictions.py --weights rrwnet_RITE_refinement.pth --images-path da
 ```
 
 
-## Training
+## Training and Evaluation
 
 All training code can be found in the `train/` directory. The training script is `train.py`, and the configuration file, with all the hyperparameters and command line arguments, is `config.py`.
 Please follow the instructions in [train/README.md](train/README.md) to train the model.
 The `train/` directory also contains the code to get the predictions of the model on the test set, which are then used for the evaluation.
-
-
-## Evaluation
 
 All evaluation code can be found in the `eval/` directory.
 Please follow the instructions in [eval/README.md](eval/README.md).
@@ -187,11 +205,14 @@ If you use this code, the weights, the preprocessed data, or the predictions in 
 
 ```
 @article{morano2024rrwnet,
-    title={RRWNet: Recursive Refinement Network for Effective Retinal Artery/Vein Segmentation and Classification},
+    title = {{RRWNet}: Recursive Refinement Network for effective retinal artery/vein segmentation and classification},
     author={Morano, Jos{\'e} and Aresta, Guilherme and Bogunovi{\'c}, Hrvoje},
-    journal={Expert Systems with Applications},
-    year={2024},
-    doi={10.1016/j.eswa.2024.124970}
+    journal = {Expert Systems with Applications},
+    volume = {256},
+    pages = {124970},
+    year = {2024},
+    issn = {0957-4174},
+    doi = {10.1016/j.eswa.2024.124970},
 }
 ```
 
