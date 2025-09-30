@@ -24,9 +24,11 @@ if __name__ == '__main__':
         help='Path to save the predictions')
     parser.add_argument('--preprocess', action='store_true', help='Preprocess the images')
     parser.add_argument('--refine', action='store_true', help='Refine the predictions')
+    parser.add_argument('--k', type=int, default=5,
+        help='Number of iterations for the refinement module. Default=5')
     args = parser.parse_args()
 
-    model = RRWNet()
+    model = RRWNet(iterations=args.k)
 
     print(f'Loading model from {args.weights}')
     model.load_state_dict(torch.load(args.weights), strict=True)
