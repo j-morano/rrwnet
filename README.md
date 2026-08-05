@@ -20,6 +20,18 @@ This is the official repository of the paper ["RRWNet: Recursive Refinement Netw
 <!-- [[`arXiv`](https://doi.org/10.48550/arXiv.2402.03166)] [`ESWA`](https://doi.org/10.1016/j.eswa.2024.124970)] [[`BibTeX`](#citation)] -->
 
 
+## GAVE Challenge (MICCAI 2025)
+
+RRWNet was the winning method of the Generalized Analysis of Vessels in Eye (GAVE) Challenge at MICCAI 2025.
+
+You can find the weights of the model used for the challenge in Hugging Face: <https://huggingface.co/j-morano/R2-V2>.
+
+Full implementation details are in the following repo: [R2-V2](https://github.com/j-morano/R2-V2)
+
+In addition, the technical report of our method can be found in the following link: [R2-V2 Technical Report](https://github.com/j-morano/R2-V2_materials/releases/download/materials/Technical_Report.pdf)
+
+
+
 ## Highlights
 
 * Human-level, state-of-the-art performance on retinal artery/vein segmentation and classification.
