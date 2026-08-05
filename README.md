@@ -24,7 +24,7 @@ This is the official repository of the paper ["RRWNet: Recursive Refinement Netw
 
 RRWNet was the winning method of the Generalized Analysis of Vessels in Eye (GAVE) Challenge at MICCAI 2025.
 
-You can find the weights of the model used for the challenge in Hugging Face: <https://huggingface.co/j-morano/R2-V2>.
+You can find the weights of the model used for the challenge in Hugging Face: <https://huggingface.co/j-morano/R2-V2>
 
 Full implementation details are in the following repo: [R2-V2](https://github.com/j-morano/R2-V2)
 
